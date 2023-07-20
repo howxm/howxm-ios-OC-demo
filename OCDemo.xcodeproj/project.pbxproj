@@ -17,6 +17,8 @@
 		B2D3859E2A67E66500E66147 /* OCDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D3859D2A67E66500E66147 /* OCDemoTests.m */; };
 		B2D385A82A67E66500E66147 /* OCDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D385A72A67E66500E66147 /* OCDemoUITests.m */; };
 		B2D385AA2A67E66500E66147 /* OCDemoUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D385A92A67E66500E66147 /* OCDemoUITestsLaunchTests.m */; };
+		B2D385DF2A69439000E66147 /* Howxm.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D385B72A67E67B00E66147 /* Howxm.xcframework */; };
+		B2D385E02A69439000E66147 /* Howxm.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B2D385B72A67E67B00E66147 /* Howxm.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		B2D385E12A69439000E66147 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B2D385E02A69439000E66147 /* Howxm.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		B2D3857E2A67E66400E66147 /* OCDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2D385812A67E66400E66147 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -54,6 +70,7 @@
 		B2D385A32A67E66500E66147 /* OCDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2D385A72A67E66500E66147 /* OCDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCDemoUITests.m; sourceTree = "<group>"; };
 		B2D385A92A67E66500E66147 /* OCDemoUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCDemoUITestsLaunchTests.m; sourceTree = "<group>"; };
+		B2D385B72A67E67B00E66147 /* Howxm.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Howxm.xcframework; path = ../howxm/build/Howxm.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2D385DF2A69439000E66147 /* Howxm.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +106,7 @@
 				B2D3859C2A67E66500E66147 /* OCDemoTests */,
 				B2D385A62A67E66500E66147 /* OCDemoUITests */,
 				B2D3857F2A67E66400E66147 /* Products */,
+				B2D385B62A67E67B00E66147 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -136,6 +155,14 @@
 			path = OCDemoUITests;
 			sourceTree = "<group>";
 		};
+		B2D385B62A67E67B00E66147 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B2D385B72A67E67B00E66147 /* Howxm.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,6 +173,7 @@
 				B2D3857A2A67E66400E66147 /* Sources */,
 				B2D3857B2A67E66400E66147 /* Frameworks */,
 				B2D3857C2A67E66400E66147 /* Resources */,
+				B2D385E12A69439000E66147 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
