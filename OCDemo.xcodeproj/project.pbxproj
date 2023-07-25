@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7277FA26357E8848E2C80C44 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 7277FEB64AE4020412D682FA /* README.md */; };
 		B2D385832A67E66400E66147 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D385822A67E66400E66147 /* AppDelegate.m */; };
 		B2D385862A67E66400E66147 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D385852A67E66400E66147 /* SceneDelegate.m */; };
 		B2D385892A67E66400E66147 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D385882A67E66400E66147 /* ViewController.m */; };
@@ -53,6 +54,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7277FEB64AE4020412D682FA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B2D3857E2A67E66400E66147 /* OCDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2D385812A67E66400E66147 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B2D385822A67E66400E66147 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				B2D385A62A67E66500E66147 /* OCDemoUITests */,
 				B2D3857F2A67E66400E66147 /* Products */,
 				B2D385B62A67E67B00E66147 /* Frameworks */,
+				7277FEB64AE4020412D682FA /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -299,6 +302,7 @@
 				B2D385832A67E66400E66147 /* AppDelegate.m in Sources */,
 				B2D385942A67E66500E66147 /* main.m in Sources */,
 				B2D385862A67E66400E66147 /* SceneDelegate.m in Sources */,
+				7277FA26357E8848E2C80C44 /* README.md in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
