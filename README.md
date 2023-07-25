@@ -1,26 +1,32 @@
 # howxm-ios-OC-demo
 
-- OC项目调用SDK代码示例,示例代码见: OCDemo/ViewController.m
-```objective-c++
-Howxm *howxm = [[Howxm alloc] init];
-[howxm initializeSDK:@"5a406af5-5caa-44f5-b477-95b5d1e5ed9f" :rootViewController :^{
-        NSLog(@"initializeSDK success");
-        NSLog(@"Initialized: %@", [howxm checkInitialized] ? @"true" : @"false");
+> OC项目调用SDK代码示例
 
-        Customer *customer = [[Customer alloc] init:@"uid_001" :@"zuos" :@"zuos@howxm.com" :@"13000000000" :nil];
-        [howxm identify:customer :^{
+## 1.安装sdk，建议使用pod安装, 详情参考：https://howxm.com/help/articles/ios-x-sdk
+> pod 'Howxm', '版本号'
+
+## 2.代码中调用SDK接口, 更多示例参考 - [ViewController.m](OCDemo/ViewController.m)
+```objective-c++
+[Howxm initializeSDK:@"your appId" :rootViewController :^{
+        NSLog(@"initializeSDK success");
+        NSLog(@"Initialized: %@", [Howxm checkInitialized] ? @"true" : @"false");
+
+        [self initCallbacks];
+
+        Customer *customer = [[Customer alloc] init:@"uid_001" :@"张三" :@"zhangsan@howxm.com" :@"13000000000" :nil];
+        [Howxm identify:customer :^{
             NSLog(@"identify success");
-            [howxm checkOpen:@"8d6d3fb38515f3a966017cd530696bc1" :nil :^{
+            [Howxm checkOpen:@"your campaignId" :nil :^{
                 NSLog(@"checkOpen success");
             } :^{
                 NSLog(@"checkOpen failed");
             }];
-            // [howxm open:@"8d6d3fb38515f3a966017cd530696bc1" :nil :nil :nil];
-            [howxm event:@"test" :@{@"a": @"1", @"b": @2} :nil :nil :nil];
+            [Howxm event:@"payment_click" :@{@"price": @100} :nil :nil :nil];
         } :^{
             NSLog(@"identify failed");
         }];
     } :nil];
 ```
-- 该项目启动后会自动弹出问卷
+
+- 弹出效果 (系统启动后会自动弹出)
 ![img.png](img.png)

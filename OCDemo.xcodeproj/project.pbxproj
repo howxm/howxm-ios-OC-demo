@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7277FA26357E8848E2C80C44 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 7277FEB64AE4020412D682FA /* README.md */; };
+		B21FC2C12A6FBE4E009B942F /* Howxm.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D385B72A67E67B00E66147 /* Howxm.xcframework */; };
+		B21FC2C22A6FBE4E009B942F /* Howxm.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B2D385B72A67E67B00E66147 /* Howxm.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B2D385832A67E66400E66147 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D385822A67E66400E66147 /* AppDelegate.m */; };
 		B2D385862A67E66400E66147 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D385852A67E66400E66147 /* SceneDelegate.m */; };
 		B2D385892A67E66400E66147 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D385882A67E66400E66147 /* ViewController.m */; };
@@ -18,8 +20,6 @@
 		B2D3859E2A67E66500E66147 /* OCDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D3859D2A67E66500E66147 /* OCDemoTests.m */; };
 		B2D385A82A67E66500E66147 /* OCDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D385A72A67E66500E66147 /* OCDemoUITests.m */; };
 		B2D385AA2A67E66500E66147 /* OCDemoUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D385A92A67E66500E66147 /* OCDemoUITestsLaunchTests.m */; };
-		B2D385DF2A69439000E66147 /* Howxm.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D385B72A67E67B00E66147 /* Howxm.xcframework */; };
-		B2D385E02A69439000E66147 /* Howxm.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B2D385B72A67E67B00E66147 /* Howxm.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,13 +40,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		B2D385E12A69439000E66147 /* Embed Frameworks */ = {
+		B21FC2C32A6FBE4E009B942F /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B2D385E02A69439000E66147 /* Howxm.xcframework in Embed Frameworks */,
+				B21FC2C22A6FBE4E009B942F /* Howxm.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,7 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2D385DF2A69439000E66147 /* Howxm.xcframework in Frameworks */,
+				B21FC2C12A6FBE4E009B942F /* Howxm.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,7 +176,7 @@
 				B2D3857A2A67E66400E66147 /* Sources */,
 				B2D3857B2A67E66400E66147 /* Frameworks */,
 				B2D3857C2A67E66400E66147 /* Resources */,
-				B2D385E12A69439000E66147 /* Embed Frameworks */,
+				B21FC2C32A6FBE4E009B942F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -487,7 +487,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.howxm.OCDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.howxm.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -513,7 +513,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.howxm.OCDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.howxm.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";

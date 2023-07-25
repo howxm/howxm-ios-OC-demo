@@ -8,60 +8,59 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    Howxm *howxm = [[Howxm alloc] init];
-    [self initCallbacks:howxm];
+    Howxm.logLevel = LoggerDebug;
 
-    howxm.logLevel = LoggerDebug;
-
-    NSLog(@"Initialized: %@", [howxm checkInitialized] ? @"true" : @"false");
+    NSLog(@"Initialized: %@", [Howxm checkInitialized] ? @"true" : @"false");
 
     UIViewController *rootViewController = [self getRootViewController];
-    [howxm initializeSDK:@"5a406af5-5caa-44f5-b477-95b5d1e5ed9f" :rootViewController :^{
+    [Howxm initializeSDK:@"5ed93d69-7f44-44a7-8769-f8ad131a2010" :rootViewController :^{
         NSLog(@"initializeSDK success");
-        NSLog(@"Initialized: %@", [howxm checkInitialized] ? @"true" : @"false");
+        NSLog(@"Initialized: %@", [Howxm checkInitialized] ? @"true" : @"false");
 
-        Customer *customer = [[Customer alloc] init:@"uid_001" :@"zuos" :@"zuos@howxm.com" :@"13000000000" :nil];
-        [howxm identify:customer :^{
+        [self initCallbacks];
+
+        Customer *customer = [[Customer alloc] init:@"uid_001" :@"张三" :@"zhangsan@howxm.com" :@"13000000000" :nil];
+        [Howxm identify:customer :^{
             NSLog(@"identify success");
-            [howxm checkOpen:@"8d6d3fb38515f3a966017cd530696bc1" :nil :^{
+            [Howxm checkOpen:@"6329d0091a5c789fb97eab345585fded" :nil :^{
                 NSLog(@"checkOpen success");
             } :^{
                 NSLog(@"checkOpen failed");
             }];
-            // [howxm open:@"8d6d3fb38515f3a966017cd530696bc1" :nil :nil :nil];
-            [howxm event:@"test" :@{@"a": @"1", @"b": @2} :nil :nil :nil];
+            // [howxm open:@"6329d0091a5c789fb97eab345585fded" :nil :nil :nil];
+            [Howxm event:@"payment_click" :@{@"price": @100} :nil :nil :nil];
         } :^{
             NSLog(@"identify failed");
         }];
     } :nil];
 }
 
-- (void)initCallbacks:(Howxm *)howxm {
+- (void)initCallbacks {
 
-    [howxm onBeforeOpen:^(NSString *_Nonnull campaignId, NSString *_Nullable uid, NSDictionary<NSString *, id> *_Nullable extraAttributes) {
+    [Howxm onBeforeOpen:^(NSString *_Nonnull campaignId, NSString *_Nullable uid, NSDictionary<NSString *, id> *_Nullable extraAttributes) {
         NSLog(@"onBeforeOpen campaignId: %@", campaignId);
         NSLog(@"onBeforeOpen uid: %@", uid);
         NSLog(@"onBeforeOpen extraAttributes: %@", extraAttributes);
     }];
 
-    [howxm onOpen:^(NSString *_Nonnull campaignId, NSString *_Nullable uid, NSDictionary<NSString *, id> *_Nullable extraAttributes) {
+    [Howxm onOpen:^(NSString *_Nonnull campaignId, NSString *_Nullable uid, NSDictionary<NSString *, id> *_Nullable extraAttributes) {
         NSLog(@"onOpen campaignId: %@", campaignId);
         NSLog(@"onOpen uid: %@", uid);
         NSLog(@"onOpen extraAttributes: %@", extraAttributes);
     }];
 
-    [howxm onClose:^(NSString *_Nonnull campaignId, NSString *_Nullable uid) {
+    [Howxm onClose:^(NSString *_Nonnull campaignId, NSString *_Nullable uid) {
         NSLog(@"onClose campaignId: %@", campaignId);
         NSLog(@"onClose uid: %@", uid);
     }];
 
-    [howxm onPageComplete:^(NSString *_Nonnull campaignId, NSString *_Nullable uid, NSArray *_Nonnull fieldEntries) {
+    [Howxm onPageComplete:^(NSString *_Nonnull campaignId, NSString *_Nullable uid, NSArray *_Nonnull fieldEntries) {
         NSLog(@"onPageComplete campaignId: %@", campaignId);
         NSLog(@"onPageComplete uid: %@", uid);
         NSLog(@"onPageComplete fieldEntries: %@", fieldEntries);
     }];
 
-    [howxm onComplete:^(NSString *_Nonnull campaignId, NSString *_Nullable uid) {
+    [Howxm onComplete:^(NSString *_Nonnull campaignId, NSString *_Nullable uid) {
         NSLog(@"onComplete campaignId: %@", campaignId);
         NSLog(@"onComplete uid: %@", uid);
     }];
