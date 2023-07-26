@@ -19,7 +19,7 @@
 
         [self initCallbacks];
 
-        Customer *customer = [[Customer alloc] init:@"uid_001" :@"张三" :@"zhangsan@howxm.com" :@"13000000000" :nil];
+        Customer *customer = [[Customer alloc] init:@"uid_001" :@"张三" :@"zhangsan@howxm.com" :@"13000000000" :@{@"age": @18}];
         [Howxm identify:customer :^{
             NSLog(@"identify success");
             [Howxm checkOpen:@"6329d0091a5c789fb97eab345585fded" :@"uid_001" :^{
@@ -28,7 +28,7 @@
                 NSLog(@"checkOpen failed");
             }];
             //[Howxm open:@"6329d0091a5c789fb97eab345585fded" :nil :nil :nil];
-            [Howxm event:@"11" :@{@"price": @100, @"age": @18} :nil :^{
+            [Howxm event:@"payment_click" :@{@"price": @100, @"channel": @"Objective-C"} :nil :^{
                 NSLog(@"event success");
             } :^(NSString * _Nullable errorMessage) {
                 NSLog(@"event failed: %@", errorMessage);
