@@ -22,13 +22,17 @@
         Customer *customer = [[Customer alloc] init:@"uid_001" :@"张三" :@"zhangsan@howxm.com" :@"13000000000" :nil];
         [Howxm identify:customer :^{
             NSLog(@"identify success");
-            [Howxm checkOpen:@"6329d0091a5c789fb97eab345585fded" :nil :^{
+            [Howxm checkOpen:@"6329d0091a5c789fb97eab345585fded" :@"uid_001" :^{
                 NSLog(@"checkOpen success");
             } :^{
                 NSLog(@"checkOpen failed");
             }];
-            // [howxm open:@"6329d0091a5c789fb97eab345585fded" :nil :nil :nil];
-            [Howxm event:@"payment_click" :@{@"price": @100} :nil :nil :nil];
+            //[Howxm open:@"6329d0091a5c789fb97eab345585fded" :nil :nil :nil];
+            [Howxm event:@"11" :@{@"price": @100, @"age": @18} :nil :^{
+                NSLog(@"event success");
+            } :^(NSString * _Nullable errorMessage) {
+                NSLog(@"event failed: %@", errorMessage);
+            }];
         } :^{
             NSLog(@"identify failed");
         }];
